@@ -1,0 +1,22 @@
+#>>==>>|prime|util.base64.ext01|/prime/util/base64/ext01.sw
+(package "util.base64.ext01" "text.utf8" "protocol.mime.base64" "io.text.read" (lambda (NS UTF8 MimeBase64 TextRead)
+	engine:((. MimeBase64 "Create") "6FGHIJKLMNOPQRSTUVWXYZabcdefghijkl@*mnopqrstuvwxy012345789ABCDE-" "z")
+	EnDeCode=(lambda (engineI)
+		(lambda (uncodeString)
+			read:((. TextRead "Get") uncodeString)
+			b64:[]
+			write:(lambda (bytes)
+				i:0
+				len:(. bytes "length")
+				(while (< i len)
+					((. b64 "push") (. bytes i))
+					i=(+ i 1)
+					)
+				)
+			(engineI read write)
+			((. UTF8 "Get") b64)
+			)
+		)
+	(. NS "Encode" (EnDeCode (. engine 0)))
+	(. NS "Decode" (EnDeCode (. engine 1)))
+	))

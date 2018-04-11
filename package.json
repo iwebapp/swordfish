@@ -1,0 +1,25 @@
+{
+	"name":"swordfish"
+	,"version":"0.1.23"
+	,"description":"SWordFish is a Programming Language"
+	,"main": "index.js"
+	,"bin":{"swordfish":"./swordfish.js"}
+	,"scripts":{
+		"test": "echo \"Error: no test specified\" && exit 1"
+	}
+	,"repository":{
+		"type":"git",
+		"url":"https://github.com/iwebapp/swordfish"
+	}
+	,"keywords":[
+		"swordfish",
+		"programming",
+		"language"
+	]
+	,"author":"iwebapp"
+	,"license":"ISC"
+	,"bugs":{
+		"url":"https://github.com/iwebapp/swordfish/issues"
+	}
+	,"homepage":"https://github.com/iwebapp/swordfish"
+}
